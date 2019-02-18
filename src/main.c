@@ -1,7 +1,19 @@
 #include <Energia.h>
 
+#define G2230
+
+#ifdef G2553
+// launchpad dev config
 #define SWITCH P1_3
 #define SIGOUT RED_LED
+#endif
+
+#ifdef G2230
+// mod config
+#define SWITCH P1_2
+#define SIGOUT P1_5
+#endif
+
 #define DEBOUNCE_DELAY_MS 250
 
 volatile long lastISRTime = 0;
